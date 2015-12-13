@@ -7,11 +7,12 @@ class Exercice7 {
         int num = (int)(Math.random() * 101);
         System.out.println("I've chosen a number between 1 and 100. Have a guess:");
         int guess = sc.nextInt();
-        int i = 0; //* Number of guesses */
+        int i = 1; //* Number of guesses */
         
         while (i<8) {
             if (guess==num) {
                 System.out.println("Congratulations! You correctly guessed the number in " + i + " goes.");
+                i = 8;
             } else if (guess>num) {
                 System.out.println("The number you guessed is too big. Try again:");
                 guess = sc.nextInt();
