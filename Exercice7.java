@@ -9,23 +9,20 @@ class Exercice7 {
         int guess = sc.nextInt();
         int i = 1; //* Number of guesses */
         
-        while (i<8) {
+        while (i<9) {
             if (guess==num) {
                 System.out.println("Congratulations! You correctly guessed the number in " + i + " goes.");
                 i = 8;
-            } else if (guess>num) {
+            } else if (guess>num&&i<8) {
                 System.out.println("The number you guessed is too big. Try again:");
                 guess = sc.nextInt();
-            } else {
+            } else if (guess<num&&i<8){
                 System.out.println("The number you guessed is too small. Try again:");
                 guess = sc.nextInt();
+            } else {
+                System.out.println("Sorry... You guessed wrong 8 times. The number I chose was " + num);
             }
             i = i+1;
-        }
-        if (guess==num) {
-            System.out.println("Congratulations! You correctly guessed the number in 8 goes.");
-        } else {
-            System.out.println("Sorry... You guessed wrong 8 times. The number I chose was " + num);
         }
     }
 }
